@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,11 @@ public class CharacterAnimation
         _animator = entity.GetComponentInChildren<Animator>();
     }
 
-    public void MoveAnimation()
+    public void MoveAnimation(float moveSpeed)
     {
+        if(_animator.GetFloat("moveSpeed") == moveSpeed) return;
 
+        _animator.SetFloat("moveSpeed",moveSpeed, 0.1f, Time.deltaTime);
     }
 }
 }

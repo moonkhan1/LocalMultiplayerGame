@@ -19,7 +19,7 @@
                 {
                     "name": "WASD",
                     "id": "b8d19e60-7b75-42a4-b4bd-5d3bdd3aa6a2",
-                    "path": "2DVector(mode=2)",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -74,7 +74,7 @@
                 {
                     "name": "Controller",
                     "id": "e1661e10-7738-4227-979b-d5122bf7c6c1",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "StickDeadzone(min=0.1,max=1)",
                     "groups": "",

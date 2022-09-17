@@ -35,6 +35,11 @@ namespace UnityProject3.Controllers
         {
             _mover.MoveAction(_direction, _moveSpeed);    
         }
+
+        void LateUpdate() 
+        {
+            _animation.MoveAnimation(_direction.magnitude);    
+        }
     }
     
 }
