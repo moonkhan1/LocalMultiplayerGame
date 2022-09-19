@@ -15,6 +15,7 @@ namespace UnityProject3.Controllers
         [Header("Movement Information")] [SerializeField] float _moveSpeed = 5f;
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] Transform _turnTransform;
+        [SerializeField] WeaponController _currentWeapon;
 
         IInputReader _input;
         IMover _mover;
@@ -40,6 +41,13 @@ namespace UnityProject3.Controllers
             _direction = _input.Direction;
             _xRotator.RotationAction(_input.Rotation.x, _turnSpeed);
             _yRotator.RotationAction(_input.Rotation.y, _turnSpeed);
+
+            Debug.Log(_input.IsAttackButtonPress);
+
+            if (_input.IsAttackButtonPress)
+            {
+                _currentWeapon.Attack();
+            }
         }
         void FixedUpdate()
         {
