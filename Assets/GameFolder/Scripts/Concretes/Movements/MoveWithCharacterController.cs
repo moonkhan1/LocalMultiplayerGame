@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityProject3.Controllers;
 using UnityProject3.Abstracts.Movements;
+using UnityProject3.Abstracts.Controllers;
 
 namespace UnityProject3.Movements
 {
@@ -12,9 +13,9 @@ public class MoveWithCharacterController : IMover
 {
     CharacterController _characterController;
 
-    public MoveWithCharacterController(PlayerController playerController )
+    public MoveWithCharacterController(IEntityController entityController )
     {
-        _characterController = playerController.GetComponent<CharacterController>();
+        _characterController = entityController.transform.GetComponent<CharacterController>();
     }
 
     public void MoveAction(Vector3 direction, float moveSpeed)

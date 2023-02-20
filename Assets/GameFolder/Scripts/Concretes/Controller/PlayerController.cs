@@ -5,12 +5,12 @@ using UnityProject3.Abstracts.Inputs;
 using UnityProject3.Abstracts.Movements;
 using UnityProject3.Movements;
 using UnityProject3.Animation;
-
+using UnityProject3.Abstracts.Controllers;
 
 namespace UnityProject3.Controllers
 { 
 
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IEntityController
     {
         [Header("Movement Information")] [SerializeField] float _moveSpeed = 5f;
         [SerializeField] float _turnSpeed = 10f;
