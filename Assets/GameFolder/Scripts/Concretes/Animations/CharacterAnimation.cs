@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityProject3.Controllers;
+using UnityProject3.Abstracts.Controllers;
 
 namespace UnityProject3.Animation
 {
@@ -10,9 +11,9 @@ public class CharacterAnimation
 {
     Animator _animator;
 
-    public CharacterAnimation(PlayerController entity)
+    public CharacterAnimation(IEntityController entity)
     {
-        _animator = entity.GetComponentInChildren<Animator>();
+        _animator = entity.transform.GetComponentInChildren<Animator>();
     }
 
     public void MoveAnimation(float moveSpeed)
