@@ -15,13 +15,13 @@ namespace UnityProject3.Controllers
         [Header("Movement Information")] [SerializeField] float _moveSpeed = 5f;
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] Transform _turnTransform;
-        [SerializeField] WeaponController _currentWeapon;
 
         IInputReader _input;
         IMover _mover;
         CharacterAnimation _animation;
         IRotator _xRotator;
         IRotator _yRotator;
+        InventoryController _inventory;
 
         Vector3 _direction;
 
@@ -34,6 +34,7 @@ namespace UnityProject3.Controllers
             _animation = new CharacterAnimation(this);
             _xRotator = new RotatorX(this);
             _yRotator = new RotatorY(this);
+            _inventory = GetComponent<InventoryController>();
         }
 
         void Update() 
@@ -46,7 +47,11 @@ namespace UnityProject3.Controllers
 
             if (_input.IsAttackButtonPress)
             {
-                _currentWeapon.Attack();
+                _inventory.CurrentWeapon.Attack();
+            }
+            if(_input.IsInventoryButtonPressed)
+            {
+                _inventory.ChangeWeapon();
             }
         }
         void FixedUpdate()

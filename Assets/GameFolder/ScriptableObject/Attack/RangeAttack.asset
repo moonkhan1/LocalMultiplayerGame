@@ -19,4 +19,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2147483647
   _attackMaxDelay: 0.25
-  _animatorOverrideController: {fileID: 22100000, guid: 2a8cb4e94410b7147a53175d49ef6563, type: 2}
+  _animatorOverrideController: {fileID: 22100000, guid: 8ff8524e4b71ad74fad272bc39268649, type: 2}
