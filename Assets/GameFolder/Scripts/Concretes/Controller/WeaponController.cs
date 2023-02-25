@@ -1,36 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityProject3.Abstracts.Combats;
+using UnityProject3.Combats;
+using UnityProject3.ScriptableObjects;
 
 namespace UnityProject3.Controllers
 {
     public class WeaponController : MonoBehaviour
     {
         [SerializeField] bool _canFire;
-        [SerializeField] float _attackMaxDelay = 0.25f;
-        [SerializeField] float _distance;
-        [SerializeField] Camera _camera;
-        [SerializeField] LayerMask _layerMask;
+        [SerializeField] Transform _transformObject;
+        [SerializeField] AttackSO _attackSO;
 
         float _currentTime = 0f;
+        IAttackType _attackType;
+        public AttackSO AttackSO => _attackSO;
+
+        private void Awake() {
+            _attackType = _attackSO.GetTypeOfAttack(_transformObject);
+        }
 
         void Update()
         {
-            _currentTime = Time.deltaTime;
-            _canFire = _currentTime > _attackMaxDelay;    
+            _currentTime += Time.deltaTime;
+            _canFire = _currentTime > _attackSO.AttackDelayTime;
         }
 
         public void Attack()
         {
-            if(!_canFire) return;
+            if (!_canFire) return;
 
-            Ray ray = _camera.ViewportPointToRay(Vector3.one / 2f); // Ray tam olaraq ekranin ortasinda gorunsun
-            
-            if(Physics.Raycast(ray, out RaycastHit hit, _distance, _layerMask))
-            {
-                Debug.Log(hit.collider.gameObject.name);
-            }
-        _currentTime = 0f;
+            _attackType.AttackAction();
+            _currentTime = 0f;
         }
     }
 }

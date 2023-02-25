@@ -2407,6 +2407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9002429475798870723}
+  - component: {fileID: 8891711588899361433}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -2431,6 +2432,26 @@ Transform:
   m_Father: {fileID: 8891711587578171977}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8891711588899361433
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8621258878720356473}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 5594f1e1b52be5346a995d6f1ed94c63, type: 3}
+  m_Controller: {fileID: 9100000, guid: 008c77ab80cd42f4da5a8ec10cf48c2d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8753474781444788078
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,6 +2528,7 @@ GameObject:
   - component: {fileID: 1479373203394809926}
   - component: {fileID: 1479373203394809925}
   - component: {fileID: 8062145385311126227}
+  - component: {fileID: 7754770929937844067}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -2557,7 +2579,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1.3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2579,6 +2601,19 @@ CapsuleCollider:
   m_Height: 2.0807526
   m_Direction: 1
   m_Center: {x: 0.03223741, y: 1.0176026, z: 0}
+--- !u!114 &7754770929937844067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8891711587578171978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97220fbf8d2e95a469944f576cc16004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthInfo: {fileID: 11400000, guid: 78ad66797f623034c90ea8a01ca484bd, type: 2}
 --- !u!1 &9140769267032630536
 GameObject:
   m_ObjectHideFlags: 0
