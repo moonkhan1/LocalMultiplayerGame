@@ -43,7 +43,6 @@ namespace UnityProject3.Controllers
             _xRotator.RotationAction(_input.Rotation.x, _turnSpeed);
             _yRotator.RotationAction(_input.Rotation.y, _turnSpeed);
 
-            Debug.Log(_input.IsAttackButtonPress);
 
             if (_input.IsAttackButtonPress)
             {
