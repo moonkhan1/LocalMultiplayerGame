@@ -1331,6 +1331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 291375579943186452, guid: 4564ad77c0310b94b85c9a0146e65889, type: 3}
+      propertyPath: m_BlendUpdateMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5077049163345741058, guid: 4564ad77c0310b94b85c9a0146e65889, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.139
@@ -1691,6 +1695,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1479373203394809925, guid: 2dd16b4a2f6d23c459c234840fdcac17, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1479373203394809926, guid: 2dd16b4a2f6d23c459c234840fdcac17, type: 3}
       propertyPath: _playerPref
       value: 

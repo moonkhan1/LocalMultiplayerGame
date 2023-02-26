@@ -62,6 +62,7 @@ namespace UnityProject3.Controllers
         void LateUpdate() 
         {
             _animation.MoveAnimation(_direction.magnitude);    
+            _animation.AttackAnimation(_input.IsAttackButtonPress);
         }
     }
     

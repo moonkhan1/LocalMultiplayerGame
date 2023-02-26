@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 92c66e91a0ee1d84f84c717c3651d789
+guid: 65d25f84b58212949a692b170514b2c5
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: SwordSlashIdle
+    second: Firing Rifle - Walk
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -36,18 +36,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: SwordSlashIdle
+      name: Firing Rifle - Walk
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 38
+      lastFrame: 30
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -36
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 0
