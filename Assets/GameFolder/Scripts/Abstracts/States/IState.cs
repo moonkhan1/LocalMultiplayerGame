@@ -6,6 +6,8 @@ namespace UnityProject3.Abstracts.States
 {
     public interface IState
     {
+        void OnEnter();
         void Tick();
+        void OnExit();
     }
 }

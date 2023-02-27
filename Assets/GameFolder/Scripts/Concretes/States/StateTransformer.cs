@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityProject3.Abstracts.States;
 
 namespace UnityProject3.States
 {
     public class StateTransformer
     {
-        public IState To {get;}
         public IState From {get;}
+        public IState To {get;}
         public System.Func<bool> Condition {get;}
 
-        public StateTransformer(IState to, IState from, System.Func<bool> condition)
+        public StateTransformer(IState from, IState to, System.Func<bool> condition)
         {
-            To = to;
             From = from;
+            To = to;
             Condition = condition;
         }
     }
