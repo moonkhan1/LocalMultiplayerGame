@@ -17,15 +17,16 @@ namespace UnityProject3.Controllers
         [SerializeField] Transform _turnTransform;
 
         IInputReader _input;
-        IMover _mover;
         CharacterAnimation _animation;
         IRotator _xRotator;
         IRotator _yRotator;
+        IMover _mover;
         InventoryController _inventory;
 
         Vector3 _direction;
 
         public Transform TurnTransform => _turnTransform;
+
 
         void Awake()
         {

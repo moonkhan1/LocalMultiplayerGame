@@ -9,5 +9,7 @@ namespace UnityProject3.Abstracts.States
         void OnEnter();
         void Tick();
         void OnExit();
+        void FixedTick();
+        void LateTick();
     }
 }
