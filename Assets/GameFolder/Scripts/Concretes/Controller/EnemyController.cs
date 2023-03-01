@@ -6,6 +6,7 @@ using UnityProject3.Abstracts.Combats;
 using UnityProject3.Abstracts.Controllers;
 using UnityProject3.Abstracts.Movements;
 using UnityProject3.Animation;
+using UnityProject3.Combats;
 using UnityProject3.States;
 using UnityProject3.States.EnemyStates;
 
@@ -21,6 +22,7 @@ namespace UnityProject3.Controllers
         public InventoryController Inventory {get; private set;}
         public CharacterAnimation Animation {get; private set;}
         public Transform Target {get; private set;}
+        public Dead Dead {get; private set;}
         public float Magnitude => _navMeshAgent.velocity.magnitude;
         public bool CanAttack => Vector3.Distance(Target.position, _transform.position) <= _navMeshAgent.stoppingDistance && _navMeshAgent.velocity == Vector3.zero;
 
@@ -33,6 +35,7 @@ namespace UnityProject3.Controllers
             Animation = new CharacterAnimation(this);
             Inventory = GetComponent<InventoryController>();
             Mover = new MoveWithNavMesh(this);
+            Dead = GetComponent<Dead>();
 
         }
         void Start()
@@ -42,7 +45,7 @@ namespace UnityProject3.Controllers
         
             ChaseState chaseState = new ChaseState(this);
             AttackState attackState = new AttackState(this);
-            DeadState deadState = new DeadState();
+            DeadState deadState = new DeadState(this);
 
             _stateMachine.AddState(chaseState, attackState, () => CanAttack);
             _stateMachine.AddState(attackState, chaseState, () => !CanAttack);
@@ -53,7 +56,6 @@ namespace UnityProject3.Controllers
 
         void Update()
         {
-            if (_health.IsDead) return;
             _stateMachine.Tick();
         }
 

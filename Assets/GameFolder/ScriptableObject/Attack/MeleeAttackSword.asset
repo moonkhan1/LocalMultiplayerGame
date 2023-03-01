@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: MeleeAttackSword
   m_EditorClassIdentifier: 
   _attackType: 1
-  _damage: 50
+  _damage: 30
   _valueForDistance: 0.7
   _layerMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 64
   _attackMaxDelay: 0.5
   _animatorOverrideController: {fileID: 22100000, guid: 2a8cb4e94410b7147a53175d49ef6563, type: 2}
