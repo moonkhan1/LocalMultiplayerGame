@@ -26,11 +26,12 @@ public class CharacterAnimation
     public void AttackAnimation(bool canAttack)
     {
         _animator.SetBool("isAttack", canAttack);
+        // _animator.SetTrigger("isAttacking");
     }
 
-    public void DeadAnimation()
+    public void DeadAnimation(string parametrName)
     {
-        _animator.SetTrigger("Death");
+        _animator.SetTrigger(parametrName);
     }
 }
 }

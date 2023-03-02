@@ -24,7 +24,7 @@ namespace UnityProject3.Controllers
         public Transform Target {get; private set;}
         public Dead Dead {get; private set;}
         public float Magnitude => _navMeshAgent.velocity.magnitude;
-        public bool CanAttack => Vector3.Distance(Target.position, _transform.position) <= _navMeshAgent.stoppingDistance && _navMeshAgent.velocity == Vector3.zero;
+        public bool CanAttack => Vector3.Distance(Target.position, _transform.position) <= _navMeshAgent.stoppingDistance && _navMeshAgent.velocity == Vector3.zero && !Target.GetComponent<IHealth>().IsDead;
 
 
         void Awake()

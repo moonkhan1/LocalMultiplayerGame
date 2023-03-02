@@ -10,6 +10,7 @@ namespace UnityProject3.UIs
     public class HealthDisplay : MonoBehaviour
     {
         Image _healthImage;
+        [SerializeField] Text _health;
 
         void Awake()
         {
@@ -32,6 +33,7 @@ namespace UnityProject3.UIs
         void HandleHit(int currentHealth, int maxHealth)
         {
             _healthImage.fillAmount = Convert.ToSingle(currentHealth) / Convert.ToSingle(maxHealth);
+            _health.text = currentHealth.ToString();
         }
     }
 }

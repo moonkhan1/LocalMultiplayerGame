@@ -30,7 +30,7 @@ namespace UnityProject3.Controllers
         public void Attack()
         {
             if (!_canFire) return;
-
+            
             _attackType.AttackAction();
             _currentTime = 0f;
         }

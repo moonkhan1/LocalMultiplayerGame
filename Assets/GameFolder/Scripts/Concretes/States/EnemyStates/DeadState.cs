@@ -17,7 +17,7 @@ namespace UnityProject3.States.EnemyStates
         public void OnEnter()
         {
             Debug.Log($"{nameof(DeadState)} {nameof(OnEnter)}");
-            _enemyController.Animation.DeadAnimation();
+            _enemyController.Animation.DeadAnimation("Death");
             _enemyController.Dead.DeadAction();
         }
 

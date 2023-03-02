@@ -8,5 +8,6 @@ namespace UnityProject3.Abstracts.Combats
     {
         bool IsDead{get;}
         void TakeDamage(int damage);
+        event System.Action OnDead;
     }
 }

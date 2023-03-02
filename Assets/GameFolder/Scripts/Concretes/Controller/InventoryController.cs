@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace UnityProject3.Controllers
@@ -9,9 +10,13 @@ namespace UnityProject3.Controllers
         [SerializeField] WeaponController[] _weapons;
         public WeaponController CurrentWeapon { get; private set; }
         Animator _animator;
+        // [SerializeField] AvatarMask RunAttack;
+        // [SerializeField] AvatarMask Normal;
+        // [SerializeField] AnimatorController animC;
         byte _index = 0;
 
         private void Awake() {
+            // animC.layers[1].avatarMask = Normal;
             _weapons = GetComponentsInChildren<WeaponController>();
             foreach (WeaponController weapon in _weapons)
             {
@@ -39,6 +44,7 @@ namespace UnityProject3.Controllers
             {
                 if(CurrentWeapon == weapon)
                 {
+                    // animC.layers[1].avatarMask = RunAttack;
                     weapon.gameObject.SetActive(true);
                     _animator.runtimeAnimatorController = CurrentWeapon.AttackSO.AnimatorOverrideController;
                 }
