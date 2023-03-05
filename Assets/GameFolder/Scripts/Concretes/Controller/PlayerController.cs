@@ -16,7 +16,6 @@ namespace UnityProject3.Controllers
         [Header("Movement Information")] [SerializeField] float _moveSpeed = 5f;
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] Transform _turnTransform;
-
         IInputReader _input;
         CharacterAnimation _animation;
         IRotator _xRotator;
