@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RangeAttack
   m_EditorClassIdentifier: 
   _attackType: 0
-  _damage: 8
+  _damage: 10
   _valueForDistance: 100
   _layerMask:
     serializedVersion: 2

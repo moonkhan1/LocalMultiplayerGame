@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad828aaeb2742f4fbeb824d427d5191, type: 3}
+  m_Name: SpawnInfo
+  m_EditorClassIdentifier: 
+  _enemyPrefab: {fileID: 3264437913135586709, guid: cce37fef28d62ac4f85ff367a44b59c3, type: 3}
+  _maxSpawnTime: 15
+  _minSpawnTime: 5
