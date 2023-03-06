@@ -8,8 +8,9 @@ namespace UnityProject3.Managers
 {
     public class GameManager : SingletonBase<GameManager>
     {
-
-        void Awake() 
+        [SerializeField] int _waveMaxCount = 100;
+        public bool IsWaveFinished => _waveMaxCount <= 0;
+        void Awake()
         {
             MakeSingleton(this);
         }
@@ -22,6 +23,13 @@ namespace UnityProject3.Managers
         private IEnumerator LoadSceneAsync(string name)
         {
             yield return SceneManager.LoadSceneAsync(name);
+        }
+
+        public void DecreaseWaveEnemyCount()
+        {
+            if(IsWaveFinished) return;
+
+            _waveMaxCount--;
         }
     }
 }

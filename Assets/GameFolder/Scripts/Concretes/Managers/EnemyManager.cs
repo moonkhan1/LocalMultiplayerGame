@@ -29,6 +29,7 @@ namespace UnityProject3.Managers
         public void RemoveEnemyFromList(EnemyController enemyController)
         {
             _enemies.Remove(enemyController);
+            GameManager.Instance.DecreaseWaveEnemyCount();
         }
     }
 }

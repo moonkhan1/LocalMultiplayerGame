@@ -25,6 +25,7 @@ namespace UnityProject3.UIs
         private void HandleOnButtonClicked()
         {
             GameManager.Instance.LoadScene("Game");
+            
         }
     }
 }
