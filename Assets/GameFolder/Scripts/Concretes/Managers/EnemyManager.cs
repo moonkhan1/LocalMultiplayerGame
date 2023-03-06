@@ -8,9 +8,11 @@ namespace UnityProject3.Managers
 {
     public class EnemyManager : SingletonBase<EnemyManager>
     {
+        [SerializeField] int _maxEnemyCountOnRound = 50;
         [SerializeField] List<EnemyController> _enemies;
 
         public List<EnemyController> Enemies => _enemies;
+        public bool CanSpawnEnemy => _maxEnemyCountOnRound > _enemies.Count;
 
         void Awake() 
         {

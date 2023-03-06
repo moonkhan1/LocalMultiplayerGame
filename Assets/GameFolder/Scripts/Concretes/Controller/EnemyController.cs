@@ -9,6 +9,7 @@ using UnityProject3.Animation;
 using UnityProject3.Combats;
 using UnityProject3.States;
 using UnityProject3.States.EnemyStates;
+using UnityProject3.Managers;
 
 namespace UnityProject3.Controllers
 {
@@ -66,6 +67,11 @@ namespace UnityProject3.Controllers
         void LateUpdate()
         {
             _stateMachine.LateTick();            
+        }
+
+        void OnDestroy() 
+        {
+            EnemyManager.Instance.RemoveEnemyFromList(this);    
         }
     }
 }

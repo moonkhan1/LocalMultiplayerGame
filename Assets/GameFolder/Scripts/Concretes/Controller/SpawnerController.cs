@@ -22,7 +22,7 @@ namespace UnityProject3.Controllers
         {
             _currnetTime += Time.deltaTime;
 
-            if(_currnetTime > _maxTime)
+            if(_currnetTime > _maxTime && EnemyManager.Instance.CanSpawnEnemy)
             {
                 Spawn();
             }    
