@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityProject3.ScriptableObjects;
+using UnityProject3.Managers;
+
 namespace UnityProject3.Controllers
 {
     public class SpawnerController : MonoBehaviour
@@ -28,8 +30,8 @@ namespace UnityProject3.Controllers
 
         private void Spawn()
         {
-            Instantiate(_spawnInfo.EnemyPrefab, transform.position, Quaternion.identity);
-
+            EnemyController enemy = Instantiate(_spawnInfo.EnemyPrefab, transform.position, Quaternion.identity);
+            EnemyManager.Instance.AddEnemyToList(enemy);
             _currnetTime = 0f;
             _maxTime = _spawnInfo.RandomSpawnTime;
         }
