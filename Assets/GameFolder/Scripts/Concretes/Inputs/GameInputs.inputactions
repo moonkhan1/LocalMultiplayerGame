@@ -177,6 +177,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f773d9ee-d6d7-4c8a-a6f2-3a0a001c2e75",
+                    "path": "<HID:: USB Gamepad          >/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "09eaedc0-2cb0-4c17-ae1b-1aae8acafc84",
                     "path": "<Keyboard>/i",
                     "interactions": "Tap(duration=0.1)",
@@ -185,6 +196,50 @@
                     "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da9d4ad9-bcaa-4593-9edd-93c9cee32392",
+                    "path": "<Joystick>/trigger",
+                    "interactions": "Tap(duration=0.1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Analog",
+                    "id": "82464d07-463c-44d9-889d-1c815391eb9c",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "StickDeadzone,ScaleVector2(x=10,y=10)",
+                    "groups": "",
+                    "action": "Rotator",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "down",
+                    "id": "09ebfc51-9e58-47ed-bd4c-3bd16a6beae5",
+                    "path": "<HID:: USB Gamepad          >/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotator",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "591b2acd-dfc9-4c12-af90-ffdc9af54a63",
+                    "path": "<HID:: USB Gamepad          >/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotator",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
