@@ -8,11 +8,22 @@ namespace UnityProject3.Managers
 {
     public class GameManager : SingletonBase<GameManager>
     {
-        [SerializeField] int _waveMaxCount = 100;
-        public bool IsWaveFinished => _waveMaxCount <= 0;
+        [SerializeField] int _waveMaxCount = 25;
+        [SerializeField] float _waveMultiplayer = 1.2f;
+        [SerializeField] float _waveWaitTime = 7f;
+        [SerializeField] int _waveLevelCount = 1;
+
+        int _tempMaxWaveCount;
+        public bool IsWaveFinished => _tempMaxWaveCount <= 0;
+        public event System.Action<int> NextWave;
         void Awake()
         {
             MakeSingleton(this);
+        }
+
+        void Start() 
+        {
+            _tempMaxWaveCount = _waveMaxCount;
         }
 
         public void LoadScene(string name)
@@ -27,9 +38,28 @@ namespace UnityProject3.Managers
 
         public void DecreaseWaveEnemyCount()
         {
-            if(IsWaveFinished) return;
+            if(IsWaveFinished)
+            {
+                if (EnemyManager.Instance.IsListEmpty)
+                {
+                    StartCoroutine(WaitForNextLevel());  
+                }
+            } 
+            else
+            {
+                _tempMaxWaveCount--;
 
-            _waveMaxCount--;
+            }
+        }
+
+        private IEnumerator WaitForNextLevel()
+        {
+            
+            yield return new WaitForSeconds(_waveWaitTime);
+            _waveMaxCount = System.Convert.ToInt32( _waveMaxCount * _waveMultiplayer);
+            _tempMaxWaveCount = _waveMaxCount;
+            _waveLevelCount++;
+            NextWave?.Invoke(_waveLevelCount);
         }
     }
 }

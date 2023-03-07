@@ -8,10 +8,11 @@ namespace UnityProject3.Managers
 {
     public class EnemyManager : SingletonBase<EnemyManager>
     {
-        [SerializeField] int _maxEnemyCountOnRound = 50;
+        [SerializeField] int _maxEnemyCountOnRound = 30;
         [SerializeField] List<EnemyController> _enemies;
 
         public List<EnemyController> Enemies => _enemies;
+        public bool IsListEmpty => _enemies.Count <= 0; 
         public bool CanSpawnEnemy => _maxEnemyCountOnRound > _enemies.Count;
 
         void Awake() 
@@ -19,7 +20,6 @@ namespace UnityProject3.Managers
             MakeSingleton(this);
             _enemies = new List<EnemyController>();    
         }
-
         public void AddEnemyToList(EnemyController enemyController)
         {
             enemyController.transform.parent = this.transform;
