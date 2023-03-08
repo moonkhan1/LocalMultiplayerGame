@@ -60,7 +60,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -71,7 +71,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -82,7 +82,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -93,7 +93,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -115,7 +115,7 @@
                     "path": "<Joystick>/stick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "GamePad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -126,7 +126,7 @@
                     "path": "<Joystick>/stick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "GamePad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -137,7 +137,7 @@
                     "path": "<Joystick>/stick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "GamePad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -148,7 +148,7 @@
                     "path": "<Joystick>/stick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "GamePad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -159,7 +159,7 @@
                     "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "ScaleVector2(x=2,y=2)",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Rotator",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -170,7 +170,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -181,7 +181,7 @@
                     "path": "<HID:: USB Gamepad          >/button6",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "GamePad",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -192,7 +192,7 @@
                     "path": "<Keyboard>/i",
                     "interactions": "Tap(duration=0.1)",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -203,7 +203,7 @@
                     "path": "<Joystick>/trigger",
                     "interactions": "Tap(duration=0.1)",
                     "processors": "",
-                    "groups": "",
+                    "groups": "GamePad",
                     "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -225,7 +225,7 @@
                     "path": "<HID:: USB Gamepad          >/z",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "GamePad",
                     "action": "Rotator",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -236,7 +236,7 @@
                     "path": "<HID:: USB Gamepad          >/rz",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "GamePad",
                     "action": "Rotator",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -244,5 +244,38 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "KeyboardAndMouse",
+            "bindingGroup": "KeyboardAndMouse",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "GamePad",
+            "bindingGroup": "GamePad",
+            "devices": [
+                {
+                    "devicePath": "<Joystick>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }

@@ -18,11 +18,13 @@ namespace UnityProject3.Helpers
 
         private void OnEnable()
         {
+            if (GameManager.Instance == null) return;
             GameManager.Instance.NextWave += HandleOnNextWave;
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
+            if (GameManager.Instance == null) return;
             GameManager.Instance.NextWave -= HandleOnNextWave;
         }
 
