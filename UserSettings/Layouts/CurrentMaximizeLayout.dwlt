@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 50164
+  controlID: 53358
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 50165
+  controlID: 53359
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 50166
+  controlID: 53360
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 50167
+  controlID: 53361
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 485f0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 9825faff9a33fafff834faffd237faff3039faffda45faffb25efaff246bfaff3875faff6275faff0281faff5290faffb2b0faffb6b0faffdcb0faff60bafaffecccfafff0ccfaff74cefafffacefafffecefaff24cffaff82d0faff5ad8faffb0e8faff0aeafaff7201fbff9c0dfbff7415fbffd425fbff3227fbffb027fbffb427fbffda27fbff3829fbff1031fbff1232fbffd649fbffd883fbff328efbff06a5fbff5ca6fbff40affbff94c1fbffe8c1fbffe6cbfbfffecbfbffa4dffbffaadffbff42e2fbff5aeafbff4afcfbff0c09fcfff21cfcffe02bfcff642dfcff3c35fcffac52fcff8a5afcff905afcff245dfcff1a66fcff2066fcffd29bfcff60affcff0cc6fcff46c7fcff6ed0fcff62d9fcff34e1fcff66e2fcfffeedfcffd4fffcff6c02fdff5a0bfdffa81cfdffb22dfdff403efdffc04ffdffea61fdff207dfdfffcaafdffecb4fdffd2d8fdff14dbfdff26e4fdff26e5fdff1cf4fdff0606fefff81afeff0a29feff582afeff8432feff7238fefff639feffc841feff3a5efeff1a60feff3269fefffa70feff0071feff1c7efeffee85feff1ca6feff86c2feffacc2feff54d1feffe8dffeffececfeffc4fafeffe2fcfeff1209ffffca1effff4628ffff2a29ffffae2affffe631ffff1234ffffc638ffff4a3affff8041ffff0c5bffffb270ffff3682ffff7a8fffffd2acffff22b8ffff9ad5ffff7aebffffd8ecffff5ef6ffff16fbfffff4ffffff7c5f0000e05f000006b1000034b1000056b10000f4b400006cbb00009abb0000bcbb00000cbe0000aac6000060ca000038cd00003cd70000d6de000082e2000000e400006ae50000e6e60000b0e700007ce80000aee8000086f300001cfd0000a8010100160201008e0501001c070100e4070100aa08010070090100380a0100680a0100b60b0100e60b01005c0f01008c0f010002110100ca1101000a130100b21d0100761e01003a1f0100a225010046360100063c0100
       m_RenameOverlay:
@@ -587,7 +587,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 13.391081
     speed: 2
-    m_Value: 10.560119
+    m_Value: 12.124355
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -898,21 +898,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/GameFolder/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/GameFolder/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Acer\Desktop\Ayxan
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 250}
-    m_SelectedIDs: 2e5f0000
-    m_LastClickedID: 24366
+    scrollPos: {x: 0, y: 102}
+    m_SelectedIDs: 125f0000
+    m_LastClickedID: 24338
     m_ExpandedIDs: 00000000ea5e0000ec5e0000ee5e0000f05e0000f25e0000f45e0000f65e0000f85e0000fa5e0000fc5e0000fe5e0000005f0000e67d0000e87d0000ea7d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -966,9 +966,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 485f0000
-    m_LastClickedInstanceID: 24392
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000d6760000f4640000666c0000966c0000a26c0000446a0000e26a0000e0fb000014fc000038fc000058fc00000cfc0000ecfb00005cfc0000d8fb000024fc000064fc00008cfc0000f8fb0000e8fb000018fc0000d0fb000074fc000028fc00003cfc00007cfc000068fc000000fc0000f4fb000080fc000088fc0000ccfb000044fc00004cfc000084fc0000fcfb0000fc6f0000f66f00000e7000001470000002700000f06f00002c760000727600003e7600008476000048760000f0fb00001af00000eaf00000be06010008700000c20601000072000096e2000042b40000d2b30000d6b30000aeb20100ecc2010072f40100ee6900007474000072740000ec6f000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1116,9 +1116,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 989
+    x: 939
     y: 73
-    width: 376
+    width: 426
     height: 614
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
