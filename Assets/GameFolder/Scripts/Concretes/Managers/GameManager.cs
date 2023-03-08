@@ -12,6 +12,9 @@ namespace UnityProject3.Managers
         [SerializeField] float _waveMultiplayer = 1.2f;
         [SerializeField] float _waveWaitTime = 7f;
         [SerializeField] int _waveLevelCount = 1;
+        [SerializeField] int _playerCount = 0;
+
+        public int PlayerCount => _playerCount;
 
         int _tempMaxWaveCount;
         public bool IsWaveFinished => _tempMaxWaveCount <= 0;
@@ -60,6 +63,11 @@ namespace UnityProject3.Managers
             _tempMaxWaveCount = _waveMaxCount;
             _waveLevelCount++;
             NextWave?.Invoke(_waveLevelCount);
+        }
+
+        public void IncreasePlayerCount()
+        {
+            _playerCount++;
         }
     }
 }
