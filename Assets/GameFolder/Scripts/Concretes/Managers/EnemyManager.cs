@@ -10,7 +10,8 @@ namespace UnityProject3.Managers
     {
         [SerializeField] int _maxEnemyCountOnRound = 30;
         [SerializeField] List<EnemyController> _enemies;
-
+        
+        public List<Transform> Targets { get; private set; }
         public List<EnemyController> Enemies => _enemies;
         public bool IsListEmpty => _enemies.Count <= 0; 
         public bool CanSpawnEnemy => _maxEnemyCountOnRound > _enemies.Count;
@@ -18,7 +19,8 @@ namespace UnityProject3.Managers
         void Awake() 
         {
             MakeSingleton(this);
-            _enemies = new List<EnemyController>();    
+            _enemies = new List<EnemyController>();
+            Targets = new List<Transform>();
         }
         public void AddEnemyToList(EnemyController enemyController)
         {
@@ -30,6 +32,15 @@ namespace UnityProject3.Managers
         {
             _enemies.Remove(enemyController);
             GameManager.Instance.DecreaseWaveEnemyCount();
+        }
+
+        public void ClearAllEnemies()
+        {
+            foreach (EnemyController enemyController in _enemies)
+            {
+                Destroy(enemyController.gameObject);
+            }
+            _enemies.Clear();
         }
     }
 }

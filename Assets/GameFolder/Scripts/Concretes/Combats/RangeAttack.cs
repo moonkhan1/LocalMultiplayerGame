@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityProject3.Abstracts.Combats;
+using UnityProject3.Managers;
 using UnityProject3.ScriptableObjects;
 
 namespace UnityProject3.Combats
@@ -20,11 +22,19 @@ namespace UnityProject3.Combats
         {
             Ray ray = _camera.ViewportPointToRay(Vector3.one / 2f); // Ray tam olaraq ekranin ortasinda gorunsun
 
+            SoundManager.Instance.Play("Laser");
             if (Physics.Raycast(ray, out RaycastHit hit, _attackSO.ValueForDistance, _attackSO.LayerMask))
             {
                 if (hit.collider.TryGetComponent(out IHealth health))
                 {
                     health.TakeDamage(_attackSO.Damage);
+                    SoundManager.Instance.MetalCrackSoundBullet.Play();
+                    if (health.IsDead)
+                    {
+                        // GameManager.Instance?.RaiseOnEnemyKilled();
+                        // Health tempHealth = hit.transform.GetComponent<Health>();
+                        // Object.Destroy(tempHealth);
+                    }
                 }
             }
         }

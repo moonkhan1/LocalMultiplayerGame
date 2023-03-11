@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,25 +8,31 @@ using UnityProject3.Movements;
 using UnityProject3.Animation;
 using UnityProject3.Abstracts.Controllers;
 using UnityProject3.Abstracts.Combats;
+using UnityProject3.Managers;
 
 namespace UnityProject3.Controllers
 { 
 
     public class PlayerController : MonoBehaviour, IEntityController
     {
-        [Header("Movement Information")] [SerializeField] float _moveSpeed = 5f;
+        [Header("Movement Information")] 
+        [SerializeField] float _moveSpeed = 5f;
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] Transform _turnTransform;
-        IInputReader _input;
+        InventoryController _inventory;
         CharacterAnimation _animation;
+        IInputReader _input;
+        Vector3 _direction;
         IRotator _xRotator;
         IRotator _yRotator;
         IHealth _health;
         IMover _mover;
-        InventoryController _inventory;
 
-        Vector3 _direction;
+        [Header("UI Information")] 
+        [SerializeField] GameObject _gameOverPanel;
 
+        public delegate void IsKilled();
+        public event IsKilled isEnemyKilled;
         public Transform TurnTransform => _turnTransform;
 
 
@@ -42,7 +49,20 @@ namespace UnityProject3.Controllers
 
         void OnEnable() 
         {
-            _health.OnDead += () => _animation.DeadAnimation("Death");    
+            
+            _health.OnDead += () =>
+            {
+                _animation.DeadAnimation("Death");
+                // _gameOverPanel.SetActive(true);
+                GameManager.Instance.ReturnMenuOnAllPlayerDead();
+                StartCoroutine(WhenPlayerDead());
+            };
+            EnemyManager.Instance.Targets.Add(this.transform);
+        }
+
+        private void OnDisable()
+        {
+            EnemyManager.Instance.Targets.Remove(this.transform);
         }
 
         void Update() 
@@ -73,6 +93,20 @@ namespace UnityProject3.Controllers
             if(_health.IsDead) return;
             _animation.MoveAnimation(_direction.magnitude);    
             _animation.AttackAnimation(_input.IsAttackButtonPress);
+        }
+
+        IEnumerator WhenPlayerDead()
+        {
+            yield return new WaitForSeconds(5f);
+            transform.gameObject.SetActive(false);
+        }
+        
+        public void RaiseOnEnemyKilled()
+        {
+            if (isEnemyKilled != null)
+            {
+                isEnemyKilled();
+            }
         }
     }
     

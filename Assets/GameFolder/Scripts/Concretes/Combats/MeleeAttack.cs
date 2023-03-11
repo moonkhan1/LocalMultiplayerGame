@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityProject3.Abstracts.Combats;
+using UnityProject3.Managers;
 using UnityProject3.ScriptableObjects;
 
 namespace UnityProject3.Combats
@@ -25,9 +24,19 @@ namespace UnityProject3.Combats
                 if(collider.TryGetComponent(out IHealth health))
                 {
                     health.TakeDamage(_attackSO.Damage);
+                    SoundManager.Instance.MetalCrackSoundSword.Play();
+                    if (health.IsDead)
+                    {
+                        // GameManager.Instance?.RaiseOnEnemyKilled();
+                        // Health tempHealth = collider.transform.GetComponent<Health>();
+                        // Object.Destroy(tempHealth);
+                    }
+                    
                 }
             }
         
         }
+
+        
     }
 }

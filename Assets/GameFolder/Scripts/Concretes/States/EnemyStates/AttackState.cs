@@ -34,6 +34,7 @@ namespace UnityProject3.States.EnemyStates
         public void FixedTick()
         {
             _enemyController.Inventory.CurrentWeapon.Attack();
+            _enemyController.FindNearestTarget();
         }
 
         public void LateTick()

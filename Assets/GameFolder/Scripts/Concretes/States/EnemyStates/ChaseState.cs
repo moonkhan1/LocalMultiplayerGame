@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityProject3.Abstracts.Controllers;
 using UnityProject3.Abstracts.States;
+using UnityProject3.Managers;
 
 namespace UnityProject3.States.EnemyStates
 {
@@ -24,15 +25,18 @@ namespace UnityProject3.States.EnemyStates
         {
             Debug.Log($"{nameof(ChaseState)} {nameof(OnExit)}");
             _enemyController.Mover.MoveAction(_enemyController.transform.position,0f);
+            SoundManager.Instance.EnemyMoveSound.Stop();
         }
 
         public void Tick()
         {
             _enemyController.Mover.MoveAction(_enemyController.Target.position, _speed);
+            if(SoundManager.Instance.EnemyMoveSound.isPlaying) return;
+            SoundManager.Instance.EnemyMoveSound.Play();
         }
         public void FixedTick()
         {
-            return;
+            _enemyController.FindNearestTarget();
         }
         public void LateTick()
         {

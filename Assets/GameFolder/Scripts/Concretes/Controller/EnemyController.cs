@@ -37,12 +37,12 @@ namespace UnityProject3.Controllers
             Inventory = GetComponent<InventoryController>();
             Mover = new MoveWithNavMesh(this);
             Dead = GetComponent<Dead>();
+            _transform = GetComponent<Transform>();
 
         }
         void Start()
         {
-            Target = FindObjectOfType<PlayerController>().transform;
-            _transform = GetComponent<Transform>();
+            FindNearestTarget();
         
             ChaseState chaseState = new ChaseState(this);
             AttackState attackState = new AttackState(this);
@@ -72,6 +72,23 @@ namespace UnityProject3.Controllers
         void OnDestroy() 
         {
             EnemyManager.Instance.RemoveEnemyFromList(this);    
+        }
+
+        public void FindNearestTarget()
+        {
+            Transform nearestTarget = EnemyManager.Instance.Targets[0];
+            foreach (Transform target in EnemyManager.Instance.Targets)
+            {
+                float nearestValue = Vector3.Distance(nearestTarget.position, _transform.position);
+                float newValue = Vector3.Distance(target.position, _transform.position);
+
+                if (newValue < nearestValue)
+                {
+                    nearestTarget = target;
+                }
+            }
+
+            Target = nearestTarget;
         }
     }
 }

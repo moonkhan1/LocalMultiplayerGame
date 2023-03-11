@@ -2,30 +2,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityProject3.Managers;
 using System;
+using UnityProject3.Abstracts.UIs;
 
 namespace UnityProject3.UIs
 {
-    public class StartButton : MonoBehaviour
+    public class StartButton : ButtonBase
     {
-        Button _button;
-
-        void Awake() 
-        {
-            _button = GetComponent<Button>();    
-        }
-
-        void OnEnable() {
-            _button.onClick.AddListener(HandleOnButtonClicked);
-        }
-
-        void OnDisable() {
-            _button.onClick.RemoveListener(HandleOnButtonClicked);    
-        }
-
-        private void HandleOnButtonClicked()
+        protected override void HandeOnClick()
         {
             GameManager.Instance.LoadScene("Game");
-            
         }
+
     }
 }

@@ -18,7 +18,7 @@ namespace UnityProject3.Managers
         }
 
 
-        private void Start()
+        private void OnEnable()
         {
             StartCoroutine(PlayerJoinAsync());
         }
@@ -36,12 +36,21 @@ namespace UnityProject3.Managers
         public void HandleOnJoin()
         {
             _playerIndex++;
+            if (_playerIndex >= _playerPrefebs.Length)
+            {
+                _playerIndex = _playerPrefebs.Length - 1;
+            }
             _playerInputManager.playerPrefab = _playerPrefebs[_playerIndex];
         }
         
         public void HandleOnLeft()
         {
             _playerIndex--;
+            if (_playerIndex < 0)
+            {
+                _playerIndex = 0;
+            }
+            _playerInputManager.playerPrefab = _playerPrefebs[_playerIndex];
         }
     }
 }

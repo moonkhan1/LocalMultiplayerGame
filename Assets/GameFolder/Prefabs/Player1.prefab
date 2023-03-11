@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7280254815343454514, guid: b84e89a53f2748a49903144df253a8c5, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7280254815343454519, guid: b84e89a53f2748a49903144df253a8c5, type: 3}
       propertyPath: m_RootOrder
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7280254815436292473, guid: b84e89a53f2748a49903144df253a8c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.046717454
+      value: 0.75328255
       objectReference: {fileID: 0}
     - target: {fileID: 7280254815436292473, guid: b84e89a53f2748a49903144df253a8c5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -125,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7280254815859296461, guid: b84e89a53f2748a49903144df253a8c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.046717454
+      value: 0.75328255
       objectReference: {fileID: 0}
     - target: {fileID: 7280254815859296461, guid: b84e89a53f2748a49903144df253a8c5, type: 3}
       propertyPath: m_LocalPosition.y

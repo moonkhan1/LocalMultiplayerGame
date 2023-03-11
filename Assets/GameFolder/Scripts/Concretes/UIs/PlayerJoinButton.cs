@@ -3,32 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityProject3.Abstracts.UIs;
 using UnityProject3.Managers;
 
 namespace UnityProject3.UIs
 {
-    public class PlayerJoinButton : MonoBehaviour
+    public class PlayerJoinButton : ButtonBase
     {
-         Button _button;
-
-        void Awake()
-        {
-            _button = GetComponent<Button>();
-        }
-
-        void OnEnable()
-        {
-            _button.onClick.AddListener(HandelOnClick);
-        }
-
-        void OnDisable()
-        {
-            _button.onClick.RemoveListener(HandelOnClick);
-        }
-
-        void HandelOnClick()
+        protected override void HandeOnClick()
         {
             GameManager.Instance.IncreasePlayerCount();
         }
+
     }
 }

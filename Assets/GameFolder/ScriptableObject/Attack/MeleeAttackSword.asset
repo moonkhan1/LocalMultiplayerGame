@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MeleeAttackSword
   m_EditorClassIdentifier: 
   _attackType: 1
-  _damage: 40
+  _damage: 50
   _valueForDistance: 0.7
   _layerMask:
     serializedVersion: 2
