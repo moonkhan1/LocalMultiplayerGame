@@ -8,6 +8,7 @@ public interface IInputReader
     Vector2 Rotation { get; }
     bool IsAttackButtonPress { get; }
     bool IsInventoryButtonPressed {get;}
+    bool IsPauseMenuButtonPressed { get; }
 }
 }
 

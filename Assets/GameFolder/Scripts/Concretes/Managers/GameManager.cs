@@ -69,6 +69,10 @@ namespace UnityProject3.Managers
         {
             _playerCount++;
         }
+        public void DecreasePlayerCount()
+        {
+            _playerCount--;
+        }
 
         public void ReturnMenuOnAllPlayerDead()
         {
@@ -83,6 +87,11 @@ namespace UnityProject3.Managers
                 EnemyManager.Instance.Targets.Clear();
                 LoadScene("Menu");
             }
+        }
+
+        public void ExitGame()
+        {
+            Application.Quit(0);
         }
         
 

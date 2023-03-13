@@ -13,10 +13,9 @@ namespace UnityProject3.Inputs
     {
         public Vector3 Direction { get; private set; }
         public Vector2 Rotation { get; private set; }
-
         public bool IsAttackButtonPress { get; private set; }
-
         public bool IsInventoryButtonPressed { get; private set; }
+        public bool IsPauseMenuButtonPressed { get; private set; }
 
         int _inventoryIndex;
 
@@ -41,10 +40,12 @@ namespace UnityProject3.Inputs
             if (IsInventoryButtonPressed && context.action.triggered) return;
 
             StartCoroutine(WaitFrameForWeaponSwitch());
-
-
         }
-
+        public void OnPauseMenu(InputAction.CallbackContext context)
+        {
+            IsPauseMenuButtonPressed = context.ReadValueAsButton();
+        }
+        
         IEnumerator WaitFrameForWeaponSwitch()
         {
             IsInventoryButtonPressed = true && _inventoryIndex % 2 == 0;

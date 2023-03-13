@@ -11,7 +11,7 @@ namespace UnityProject3.Combats
         Transform _transformObject;
         AttackSO _attackSO;
         private PlayerController _player;
-        public MeleeAttack(Transform transformObject, AttackSO attackSO)
+        public MeleeAttack(AttackSO attackSO, Transform transformObject)
         {
             _transformObject = transformObject;
             _attackSO = attackSO;

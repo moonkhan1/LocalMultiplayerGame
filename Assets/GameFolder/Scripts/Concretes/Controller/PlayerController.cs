@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityProject3.Abstracts.Inputs;
 using UnityProject3.Abstracts.Movements;
@@ -32,6 +30,8 @@ namespace UnityProject3.Controllers
 
         [Header("UI Information")] 
         [SerializeField] GameObject _gameOverPanel;
+        [SerializeField] GameObject _escMenu;
+        private int _escapeMenuCount;
 
         public delegate void IsKilled();
         public event IsKilled isEnemyKilled;
@@ -84,6 +84,20 @@ namespace UnityProject3.Controllers
             {
                 _inventory.ChangeWeapon();
             }
+
+            if (_input.IsPauseMenuButtonPressed)
+            {
+                if (GameManager.Instance.PlayerCount > 1)
+                {
+                    gameObject.SetActive(false);
+                    GameManager.Instance.DecreasePlayerCount();
+                }
+                else
+                {
+                    GameManager.Instance.LoadScene("Menu");
+                }
+            }
+            
         }
         void FixedUpdate()
         {

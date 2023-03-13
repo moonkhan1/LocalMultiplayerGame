@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityProject3.Abstracts.Combats;
 using UnityProject3.Controllers;
@@ -15,7 +12,7 @@ namespace UnityProject3.Combats
         AttackSO _attackSO;
         private PlayerController _player;
 
-        public RangeAttack(Transform transformObject, AttackSO attackSO)
+        public RangeAttack(AttackSO attackSO, Transform transformObject)
         {
             _camera = transformObject.GetComponent<Camera>();
             _attackSO = attackSO;
@@ -26,6 +23,7 @@ namespace UnityProject3.Combats
             Ray ray = _camera.ViewportPointToRay(Vector3.one / 2f); // Ray tam olaraq ekranin ortasinda gorunsun
 
             SoundManager.Instance.Play("Laser");
+            _attackSO.Particle.Play();
             if (Physics.Raycast(ray, out RaycastHit hit, _attackSO.ValueForDistance, _attackSO.LayerMask))
             {
                 if (hit.collider.TryGetComponent(out IHealth health))

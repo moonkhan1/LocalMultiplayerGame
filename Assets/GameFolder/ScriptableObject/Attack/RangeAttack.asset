@@ -20,3 +20,4 @@ MonoBehaviour:
     m_Bits: 64
   _attackMaxDelay: 0.25
   _animatorOverrideController: {fileID: 22100000, guid: 8ff8524e4b71ad74fad272bc39268649, type: 2}
+  _particle: {fileID: 8905418501228843062, guid: 986b9b796a71e394f9f480e10fe1a0ff, type: 3}
