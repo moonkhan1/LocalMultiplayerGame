@@ -5157,6 +5157,7 @@ MonoBehaviour:
   _moveSpeed: 5
   _turnSpeed: 10
   _turnTransform: {fileID: 7280254816226447056}
+  _spineTransform: {fileID: 3169614518319900969}
   _gameOverPanel: {fileID: 267902516738132125}
 --- !u!114 &7280254815343454514
 MonoBehaviour:

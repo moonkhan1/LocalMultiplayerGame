@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityProject3.Abstracts.Combats;
+using UnityProject3.Controllers;
 using UnityProject3.Managers;
 using UnityProject3.ScriptableObjects;
 
@@ -12,11 +13,13 @@ namespace UnityProject3.Combats
     {
         Camera _camera;
         AttackSO _attackSO;
+        private PlayerController _player;
 
         public RangeAttack(Transform transformObject, AttackSO attackSO)
         {
             _camera = transformObject.GetComponent<Camera>();
             _attackSO = attackSO;
+            _player = Object.FindObjectOfType<PlayerController>();
         }
         public void AttackAction()
         {
@@ -31,9 +34,9 @@ namespace UnityProject3.Combats
                     SoundManager.Instance.MetalCrackSoundBullet.Play();
                     if (health.IsDead)
                     {
-                        // GameManager.Instance?.RaiseOnEnemyKilled();
-                        // Health tempHealth = hit.transform.GetComponent<Health>();
-                        // Object.Destroy(tempHealth);
+                        _player?.RaiseOnEnemyKilled();
+                        Health tempHealth = hit.transform.GetComponent<Health>();
+                        Object.Destroy(tempHealth);
                     }
                 }
             }

@@ -19,12 +19,14 @@ namespace UnityProject3.Controllers
         [SerializeField] float _moveSpeed = 5f;
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] Transform _turnTransform;
+        [SerializeField] Transform _spineTransform;
         InventoryController _inventory;
         CharacterAnimation _animation;
         IInputReader _input;
         Vector3 _direction;
         IRotator _xRotator;
         IRotator _yRotator;
+        IRotator _spineRotator;
         IHealth _health;
         IMover _mover;
 
@@ -44,6 +46,7 @@ namespace UnityProject3.Controllers
             _animation = new CharacterAnimation(this);
             _xRotator = new RotatorX(this);
             _yRotator = new RotatorY(this);
+            _spineRotator = new SpineRotationX(_spineTransform);
             _inventory = GetComponent<InventoryController>();
         }
 
@@ -93,6 +96,7 @@ namespace UnityProject3.Controllers
             if(_health.IsDead) return;
             _animation.MoveAnimation(_direction.magnitude);    
             _animation.AttackAnimation(_input.IsAttackButtonPress);
+            _spineRotator.RotationAction(_input.Rotation.y, _turnSpeed);
         }
 
         IEnumerator WhenPlayerDead()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityProject3.Abstracts.Combats;
+using UnityProject3.Controllers;
 using UnityProject3.Managers;
 using UnityProject3.ScriptableObjects;
 
@@ -9,10 +10,12 @@ namespace UnityProject3.Combats
     {
         Transform _transformObject;
         AttackSO _attackSO;
+        private PlayerController _player;
         public MeleeAttack(Transform transformObject, AttackSO attackSO)
         {
             _transformObject = transformObject;
             _attackSO = attackSO;
+            _player = Object.FindObjectOfType<PlayerController>();
         }
         public void AttackAction()
         {
@@ -27,9 +30,9 @@ namespace UnityProject3.Combats
                     SoundManager.Instance.MetalCrackSoundSword.Play();
                     if (health.IsDead)
                     {
-                        // GameManager.Instance?.RaiseOnEnemyKilled();
-                        // Health tempHealth = collider.transform.GetComponent<Health>();
-                        // Object.Destroy(tempHealth);
+                        _player?.RaiseOnEnemyKilled();
+                        Health tempHealth = collider.transform.GetComponent<Health>();
+                        Object.Destroy(tempHealth);
                     }
                     
                 }

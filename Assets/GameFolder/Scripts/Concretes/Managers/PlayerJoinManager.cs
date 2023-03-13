@@ -41,6 +41,7 @@ namespace UnityProject3.Managers
                 _playerIndex = _playerPrefebs.Length - 1;
             }
             _playerInputManager.playerPrefab = _playerPrefebs[_playerIndex];
+            _playerInputManager.splitScreen = true;
         }
         
         public void HandleOnLeft()
@@ -51,6 +52,7 @@ namespace UnityProject3.Managers
                 _playerIndex = 0;
             }
             _playerInputManager.playerPrefab = _playerPrefebs[_playerIndex];
+            _playerInputManager.splitScreen = false;
         }
     }
 }
